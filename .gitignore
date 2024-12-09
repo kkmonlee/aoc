@@ -13,6 +13,7 @@ cabal.project.local
 *.prof
 *.hp
 *.eventlog
+*input.txt
 
 /target/
 **/*.rs.bk
