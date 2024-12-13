@@ -1,3 +1,8 @@
+# ignores files without extensions
+*
+!*.*
+!*/
+
 .DS_Store
 Thumbs.db
 *.swp
@@ -13,7 +18,8 @@ cabal.project.local
 *.prof
 *.hp
 *.eventlog
-*input.txt
+input/
+*input*.txt
 
 /target/
 **/*.rs.bk
