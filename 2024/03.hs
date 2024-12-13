@@ -3,7 +3,7 @@ import Data.Char (isDigit)
 
 main :: IO ()
 main = do
-  input <- readFile "input.txt"
+  input <- readFile "input/input_3.txt"
   let (part1Sum, _) = parseInstructions input True False
   let (part2Sum, _) = parseInstructions input True True
   putStrLn $ "Part 1: " ++ show part1Sum

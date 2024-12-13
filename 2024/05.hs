@@ -13,7 +13,7 @@ trim = f . f where f = reverse . dropWhile isSpace
 
 main :: IO ()
 main = do
-  content <- readFile "input.txt"
+  content <- readFile "input/input_5.txt"
   let [rulesSec, updatesSec] = splitOn "\n\n" (trim content)
   let rules = map parseRule (lines rulesSec)
       updates = map (map read . splitOn ",") (lines updatesSec)

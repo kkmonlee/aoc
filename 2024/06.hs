@@ -89,7 +89,7 @@ findValidObstructions g (sx,sy) _
 
 main :: IO ()
 main = do
-  (grid, startPos, direction) <- parseMap "input.txt"
+  (grid, startPos, direction) <- parseMap "input/input_6.txt"
   let visitedPositions = simulatePatrol grid startPos direction
   let part1Result = length visitedPositions
   let part2Result = findValidObstructions grid startPos direction

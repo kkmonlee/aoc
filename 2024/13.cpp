@@ -42,7 +42,7 @@ inline ll parse_number(const string &line, size_t pos)
 vector<arr(6)> load_data()
 {
   vector<arr(6)> data;
-  ifstream in("input.txt");
+  ifstream in("input/input_13.txt");
   string line;
   arr(6) cur;
   ll idx = 0;

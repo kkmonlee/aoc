@@ -3,7 +3,7 @@ import Data.Char (isSpace)
 
 main :: IO ()
 main = do
-  contents <- readFile "input.txt"
+  contents <- readFile "input/input_2.txt"
   let reports = map (map read . words) (lines (trim contents))
       part1Result = length (filter isSafe reports)
       part2Result = length (filter (isSafeWithDampener isSafe) reports)

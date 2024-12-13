@@ -64,7 +64,7 @@ price2 !r = S.size r * perimeter
 main :: IO ()
 main = do
   args <- getArgs
-  let file = if null args then "input.txt" else head args
+  let file = if null args then "input/input_12.txt" else head args
   contents <- readFile file
   let !grid = force $ toGrid $ lines contents
       !regions = findRegions grid

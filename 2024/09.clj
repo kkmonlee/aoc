@@ -114,7 +114,7 @@
             order)))
 
 (defn -main []
-  (let [disk-map (slurp "input.txt")
+  (let [disk-map (slurp "input/input_9.txt")
         lengths (parse-lengths disk-map)
         disk (build-disk lengths)
         final (compact disk)

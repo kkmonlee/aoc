@@ -2,7 +2,7 @@ import System.IO
 
 main :: IO ()
 main = do
-  text <- lines <$> readFile "input2.txt"
+  text <- lines <$> readFile "input/input_4.txt"
   let height = length text
       width = length (head text)
       directions = [(1,0),(0,1),(1,1),(-1,1),(1,-1),(-1,-1),(0,-1),(-1,0)]

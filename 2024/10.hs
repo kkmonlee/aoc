@@ -6,7 +6,7 @@ type Point = (Int, Int)
 
 main :: IO ()
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "input/input_10.txt"
     let topoMap = parseTopoMap $ lines input
         trailheadScores = sum $ map (trailheadScore topoMap) (findTrailheads topoMap)
         trailheadRatings = sum $ map (trailheadRating topoMap) (findTrailheads topoMap)

@@ -5,7 +5,7 @@ use std::char;
 use std::iter::FromIterator;
 
 fn main() -> std::io::Result<()> {
-  let file = File::open("input.txt")?;
+  let file = File::open("input/input_8.txt")?;
   let grid: Vec<String> = BufReader::new(file).lines().map(|l| l.unwrap()).collect();
   let rows = grid.len();
   let cols = if rows > 0 { grid[0].len() } else {0};

@@ -5,7 +5,7 @@ import qualified Data.Map.Strict as M
 
 main :: IO ()
 main = do
-  contents <- readFile "input.txt"
+  contents <- readFile "input/input_1.txt"
   let ls = lines contents
       half = length ls `div` 2
       leftList = map read (take half ls) :: [Int]

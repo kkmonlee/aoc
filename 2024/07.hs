@@ -33,8 +33,8 @@ isPossibleTarget target numbers opList =
       opsForAllPositions = sequence (replicate numPositions opList)
   in any (\comb -> evaluateExpression numbers comb == target) opsForAllPositions
 
-calculateTotalCalibrationForOps :: FilePath -> [String] -> IO Integer
-calculateTotalCalibrationForOps filePath operatorSet = do
+calculateTotalCalibration :: FilePath -> [String] -> IO Integer
+calculateTotalCalibration filePath operatorSet = do
   content <- readFile filePath
   let ls = lines content
   return $ sum $ map (processLine operatorSet) ls
@@ -50,8 +50,8 @@ where
 
 main :: IO ()
 main = do
-  part1Result <- calculateTotalCalibrationForOps "input.txt" ["+","-","*"]
+  part1Result <- calculateTotalCalibration "input/input_7.txt" ["+","-","*"]
 
-  part2Result <- calculateTotalCalibrationForOps "input.txt" ["+","-","*","||"]
+  part2Result <- calculateTotalCalibration "input/input_7.txt" ["+","-","*","||"]
   putStrLn $ "Part 1: " ++ show part1Result
   putStrLn $ "Part 2: " ++ show part2Result
