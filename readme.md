@@ -1,3 +1,15 @@
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 80%;
+}
+</style>
+
 language choice is based on the problem and vibes
 
 | Year | Day | Link                                                             |
