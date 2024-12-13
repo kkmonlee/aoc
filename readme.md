@@ -38,6 +38,7 @@ language choice is based on the problem and vibes
         </tr>
     </thead>
     <tbody>
+      <tr><td style='width:15%;'>13</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2023/13.clj'>Clojure</a></td></tr>
       <tr><td style='width:15%;'>12</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2023/12.hs'>Haskell</a></td></tr>
       <tr><td style='width:15%;'>11</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2023/11.hs'>Haskell</a></td></tr>
       <tr><td style='width:15%;'>10</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2023/10.hs'>Haskell</a></td></tr>
