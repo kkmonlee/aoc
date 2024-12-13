@@ -32,7 +32,7 @@ def generate_html_table():
                     language = language_from_extension(ext)
                     link = f"<a href='{base_github_url}{year}/{file}'>{language}</a>"
                     year_table.append(
-                        f"<tr><td>{year}</td><td>{day:02d}</td><td>{link}</td></tr>"
+                        f"<tr><td style='width:10%;'>{year}</td><td style='width:10%;'>{day:02d}</td><td style='width:80%;'>{link}</td></tr>"
                     )
             tables[year] = year_table
     return tables
@@ -43,15 +43,21 @@ def save_html_to_markdown(tables, output_file):
         for year, rows in sorted(tables.items(), reverse=True):
             # Add Markdown heading for the year
             file.write(f"## {year}\n\n")
-            # Add the HTML table
+            # Add the HTML table with styling
             file.write(
                 "<table style='width:100%; border-collapse: collapse; text-align: left;'>\n"
             )
             file.write("    <thead>\n")
             file.write("        <tr>\n")
-            file.write("            <th style='width:10%;'>Year</th>\n")
-            file.write("            <th style='width:10%;'>Day</th>\n")
-            file.write("            <th style='width:80%;'>Link</th>\n")
+            file.write(
+                "            <th style='width:10%; text-align: left;'>Year</th>\n"
+            )
+            file.write(
+                "            <th style='width:10%; text-align: left;'>Day</th>\n"
+            )
+            file.write(
+                "            <th style='width:80%; text-align: left;'>Link</th>\n"
+            )
             file.write("        </tr>\n")
             file.write("    </thead>\n")
             file.write("    <tbody>\n")
@@ -64,4 +70,4 @@ def save_html_to_markdown(tables, output_file):
 if __name__ == "__main__":
     tables = generate_html_table()
     save_html_to_markdown(tables, "table.md")
-    print("Markdown with embedded HTML created in table.md!")
+    print("Markdown with styled HTML tables created in table.md!")
