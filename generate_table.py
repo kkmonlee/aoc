@@ -23,7 +23,7 @@ def generate_html_table():
         year_path = os.path.join(repo_dir, year)
         if os.path.isdir(year_path) and year.isdigit():
             year_table = []
-            for file in sorted(os.listdir(year_path)):
+            for file in sorted(os.listdir(year_path), reverse=True):
                 if file.endswith(
                     (".rs", ".cpp", ".clj", ".hs", ".scala", ".lisp", ".ml", ".jl")
                 ):
@@ -41,9 +41,8 @@ def generate_html_table():
 def save_html_to_markdown(tables, output_file):
     with open(output_file, "w") as file:
         for year, rows in sorted(tables.items(), reverse=True):
-            # Add Markdown heading for the year
+
             file.write(f"## {year}\n\n")
-            # Add the HTML table with styling
             file.write(
                 "<table style='width:100%; border-collapse: collapse; text-align: left;'>\n"
             )
@@ -64,10 +63,10 @@ def save_html_to_markdown(tables, output_file):
             file.write("      " + "\n      ".join(rows) + "\n")
             file.write("    </tbody>\n")
             file.write("</table>\n\n")
-            file.write("---\n\n")  # Add a horizontal rule for separation
+            file.write("---\n\n")
 
 
 if __name__ == "__main__":
     tables = generate_html_table()
     save_html_to_markdown(tables, "table.md")
-    print("Markdown with styled HTML tables created in table.md!")
+    print("tables created in table.md")
