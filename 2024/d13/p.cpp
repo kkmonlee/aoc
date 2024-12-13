@@ -1,13 +1,13 @@
+// g++ -O3 -march=native -flto -std=c++17
 #include <bits/stdc++.h>
 using namespace std;
 
 #define ll int64_t
 #define vll vector<ll>
-#define arr array<ll, 6>
+#define arr(n) array<ll, n>
 #define pb push_back
 #define rep(i, a, b) for (ll i = a; i < b; ++i)
 #define each(x, a) for (auto &x : a)
-#define nl '\n'
 #define sz(x) (ll)(x).size()
 
 class Fraction
@@ -39,12 +39,12 @@ inline ll parse_number(const string &line, size_t pos)
   return num;
 }
 
-vector<arr> load_data()
+vector<arr(6)> load_data()
 {
-  vector<arr> data;
+  vector<arr(6)> data;
   ifstream in("input.txt");
   string line;
-  arr cur;
+  arr(6) cur;
   ll idx = 0;
 
   while (getline(in, line))
@@ -113,5 +113,6 @@ int main()
       ans2 += a * 3 + b;
   }
 
-  cout << ans1 << nl << ans2 << nl;
+  cout << ans1 << endl
+       << ans2 << endl;
 }
