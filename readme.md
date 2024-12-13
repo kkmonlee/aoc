@@ -17,6 +17,4 @@ The reasoning behind my language choices is consistent with my other competitive
 
 ## Notes
 
-- Solutions are written in a single file per problem wherever possible.
 - Input files are not included in the repository since they differ for each user.
-- Code readability may vary depending on the problem and language; the focus is on solving the problem effectively.
