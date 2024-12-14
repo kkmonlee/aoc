@@ -56,5 +56,3 @@ language choice is based on the problem and vibes
 </table>
 
 ---
-
-no python 🤮
