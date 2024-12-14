@@ -67,3 +67,31 @@ Makefile
 *.nb~
 *.mx
 *.ma
+
+*.cmo
+*.cmt
+*.cmti
+*.cmx
+*.cmxa
+*.a
+
+# Dune build artifacts
+_build/
+*.install
+.dune/
+.dune-config
+
+# Generated files by utop or ocaml toplevel
+*.utop
+*.top
+
+# Editor
+*~
+*.swp
+*.swo
+.DS_Store
+.idea/
+*.vscode/
+*.project
+*.projectile
+*.cquery/

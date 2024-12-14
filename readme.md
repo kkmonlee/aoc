@@ -10,6 +10,7 @@ language choice is based on the problem and vibes
         </tr>
     </thead>
     <tbody>
+      <tr><td style='width:15%;'>14</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/14.ml'>OCaml</a></td></tr>
       <tr><td style='width:15%;'>13</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/13.cpp'>C++</a></td></tr>
       <tr><td style='width:15%;'>12</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/12.hs'>Haskell</a></td></tr>
       <tr><td style='width:15%;'>11</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/11.rs'>Rust</a></td></tr>
