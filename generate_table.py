@@ -14,19 +14,28 @@ def language_from_extension(file_extension):
         ".lisp": "Common Lisp",
         ".ml": "OCaml",
         ".jl": "Julia",
+        ".rkt": "Racket",
+        ".erl": "Erlang",
+        ".apl": "APL",
+        ".zig": "Zig",
+        ".adb": "Ada",
+        ".ads": "Ada",
+        ".kt": "Kotlin",
+        ".d": "D",
+        ".go": "Go",
     }.get(file_extension, "Unknown")
 
 
 def generate_html_table():
     tables = {}
+    valid_extensions = tuple(language_from_extension("").keys())
+
     for year in sorted(os.listdir(repo_dir), reverse=True):
         year_path = os.path.join(repo_dir, year)
         if os.path.isdir(year_path) and year.isdigit():
             year_table = []
             for file in sorted(os.listdir(year_path), reverse=True):
-                if file.endswith(
-                    (".rs", ".cpp", ".clj", ".hs", ".scala", ".lisp", ".ml", ".jl")
-                ):
+                if file.endswith(valid_extensions):
                     day = int(file.split(".")[0])
                     ext = os.path.splitext(file)[1]
                     language = language_from_extension(ext)
