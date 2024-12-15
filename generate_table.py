@@ -2,25 +2,28 @@ import os
 
 base_github_url = "https://github.com/kkmonlee/aoc/blob/main/"
 repo_dir = "."
-
 LANGUAGES = {
-    ".rs": "Rust",
-    ".cpp": "C++",
-    ".clj": "Clojure",
-    ".hs": "Haskell",
-    ".scala": "Scala",
-    ".lisp": "Common Lisp",
-    ".ml": "OCaml",
-    ".jl": "Julia",
-    ".rkt": "Racket",
-    ".erl": "Erlang",
-    ".apl": "APL",
-    ".zig": "Zig",
     ".adb": "Ada",
     ".ads": "Ada",
-    ".kt": "Kotlin",
+    ".apl": "APL",
+    ".cc": "C++",
+    ".clj": "Clojure",
+    ".cpp": "C++",
     ".d": "D",
+    ".erl": "Erlang",
     ".go": "Go",
+    ".hs": "Haskell",
+    ".jl": "Julia",
+    ".kt": "Kotlin",
+    ".lisp": "Common Lisp",
+    ".lua": "Lua",
+    ".ml": "OCaml",
+    ".nim": "Nim",
+    ".rb": "Ruby",
+    ".rkt": "Racket",
+    ".rs": "Rust",
+    ".scala": "Scala",
+    ".zig": "Zig",
 }
 
 
