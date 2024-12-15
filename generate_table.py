@@ -3,32 +3,34 @@ import os
 base_github_url = "https://github.com/kkmonlee/aoc/blob/main/"
 repo_dir = "."
 
+LANGUAGES = {
+    ".rs": "Rust",
+    ".cpp": "C++",
+    ".clj": "Clojure",
+    ".hs": "Haskell",
+    ".scala": "Scala",
+    ".lisp": "Common Lisp",
+    ".ml": "OCaml",
+    ".jl": "Julia",
+    ".rkt": "Racket",
+    ".erl": "Erlang",
+    ".apl": "APL",
+    ".zig": "Zig",
+    ".adb": "Ada",
+    ".ads": "Ada",
+    ".kt": "Kotlin",
+    ".d": "D",
+    ".go": "Go",
+}
+
 
 def language_from_extension(file_extension):
-    return {
-        ".rs": "Rust",
-        ".cpp": "C++",
-        ".clj": "Clojure",
-        ".hs": "Haskell",
-        ".scala": "Scala",
-        ".lisp": "Common Lisp",
-        ".ml": "OCaml",
-        ".jl": "Julia",
-        ".rkt": "Racket",
-        ".erl": "Erlang",
-        ".apl": "APL",
-        ".zig": "Zig",
-        ".adb": "Ada",
-        ".ads": "Ada",
-        ".kt": "Kotlin",
-        ".d": "D",
-        ".go": "Go",
-    }.get(file_extension, "Unknown")
+    return LANGUAGES.get(file_extension, "Unknown")
 
 
 def generate_html_table():
     tables = {}
-    valid_extensions = tuple(language_from_extension("").keys())
+    valid_extensions = tuple(LANGUAGES.keys())
 
     for year in sorted(os.listdir(repo_dir), reverse=True):
         year_path = os.path.join(repo_dir, year)
@@ -50,7 +52,6 @@ def generate_html_table():
 def save_html_to_markdown(tables, output_file):
     with open(output_file, "w") as file:
         for year, rows in sorted(tables.items(), reverse=True):
-
             file.write(f"## {year}\n\n")
 
             file.write(

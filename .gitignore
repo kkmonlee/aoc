@@ -95,3 +95,9 @@ _build/
 *.project
 *.projectile
 *.cquery/
+
+.metals/
+.scala-build/
+*.class
+*.txt
+*.jar
