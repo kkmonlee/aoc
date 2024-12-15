@@ -1,4 +1,4 @@
-language choice is based on the problem and vibes
+language choice is based on the problem and vibes. don't expect python here.
 
 ## 2024
 
