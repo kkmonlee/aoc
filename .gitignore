@@ -10,6 +10,7 @@ Thumbs.db
 *.swp
 *.swo
 
+alt/
 dist/
 dist-newstyle/
 .stack-work/
@@ -72,6 +73,7 @@ Makefile
 *.cmt
 *.cmti
 *.cmx
+*.cmi
 *.cmxa
 *.a
 
