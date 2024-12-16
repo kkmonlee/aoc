@@ -1,4 +1,4 @@
-language choice is based on the problem and vibes. python-free zone.
+language choice is based on the problem and vibes.
 
 ## 2024
 
