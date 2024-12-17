@@ -1,6 +1,6 @@
 import System.IO
 import Data.Char (isSpace, isDigit, isAlphaNum)
-import Control.Monad (guard)
+import Control.Monad (guard, replicateM)
 
 splitOn :: Char -> String -> [String]
 splitOn _ [] = [""]
@@ -30,7 +30,7 @@ evaluateExpression [] _ = 0
 isPossibleTarget :: Int -> [Int] -> [String] -> Bool
 isPossibleTarget target numbers opList =
   let numPositions = length numbers - 1
-      opsForAllPositions = sequence (replicate numPositions opList)
+      opsForAllPositions = replicateM numPositions opList
   in any (\comb -> evaluateExpression numbers comb == target) opsForAllPositions
 
 calculateTotalCalibration :: FilePath -> [String] -> IO Integer
@@ -38,7 +38,7 @@ calculateTotalCalibration filePath operatorSet = do
   content <- readFile filePath
   let ls = lines content
   return $ sum $ map (processLine operatorSet) ls
-where
+  where
   processLine opSet line =
     let line' = trim line
         (t:rest:_) = splitOn ':' line'

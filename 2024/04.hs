@@ -12,7 +12,7 @@ main = do
 
       checkMatch i j dx dy =
         let indices = [(i + dx*k, j + dy*k) | k <- [0..3]]
-        in all (\(x,y) -> inBounds x y) indices &&
+        in all (uncurry inBounds) indices &&
             map (uncurry charAt) indices == "XMAS"
 
       matches = length [() | i <- [0..height-1], j <- [0..width-1], (dx,dy) <- directions, checkMatch i j dx dy]
@@ -30,7 +30,7 @@ main = do
 
       sorted xs = let s = quicksort xs in s
       quicksort [] = []
-      quicksort (p:xs) = quicksort [x|x<-xs,x<=p]++[p]++quicksort[x|x<-xs,x>p]
+      quicksort (p:xs) = quicksort [x|x<-xs,x<=p]++[p]++quicksort [x|x<-xs,x>p]
 
       count = length [() | i <- [0..height-1], j <- [0..width-1], isCrossMas i j]
   putStrLn $ "Part 1: " ++ show matches

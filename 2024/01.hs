@@ -1,7 +1,7 @@
-import System.IO
-import Data.List (sort, group)
+import Data.List (group, sort)
 import Data.Map.Strict (Map)
-import qualified Data.Map.Strict as M
+import Data.Map.Strict qualified as M
+import System.IO
 
 main :: IO ()
 main = do
@@ -16,10 +16,10 @@ main = do
       part1 = sum $ zipWith (\a b -> abs (a - b)) sortedLeft sortedRight
 
       freqRight = frequencyMap rightList
-      part2 = sum [ x * M.findWithDefault 0 x freqRight | x <- leftList ]
+      part2 = sum [x * M.findWithDefault 0 x freqRight | x <- leftList]
 
   putStrLn $ "Part 1: " ++ show part1
   putStrLn $ "Part 2: " ++ show part2
 
 frequencyMap :: [Int] -> Map Int Int
-frequencyMap xs = M.fromListWith (+) [(x,1) | x <- xs]
+frequencyMap xs = M.fromListWith (+) [(x, 1) | x <- xs]
