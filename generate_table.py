@@ -11,6 +11,7 @@ LANGUAGES = {
     ".cpp": "C++",
     ".d": "D",
     ".erl": "Erlang",
+    ".f90": "Fortran",
     ".go": "Go",
     ".hs": "Haskell",
     ".jl": "Julia",

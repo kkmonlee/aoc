@@ -1,4 +1,4 @@
-language choice is based on the problem and vibes.
+language choice is based on the problem and vibes
 
 ## 2024
 
@@ -10,6 +10,7 @@ language choice is based on the problem and vibes.
         </tr>
     </thead>
     <tbody>
+      <tr><td style='width:15%;'>20</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/20.f90'>Fortran</a></td></tr>
       <tr><td style='width:15%;'>19</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/19.ml'>OCaml</a></td></tr>
       <tr><td style='width:15%;'>18</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/18.rs'>Rust</a></td></tr>
       <tr><td style='width:15%;'>17</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/17.cpp'>C++</a></td></tr>
