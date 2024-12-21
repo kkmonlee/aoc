@@ -9,68 +9,72 @@
 #include <unordered_map>
 #include <vector>
 
-typedef std::pair<int, int> Position;
-typedef std::tuple<Position, Position, int, int> CacheKey;
+typedef std::pair<int, int> position_t;
+typedef std::tuple<position_t, position_t, int, int> cache_key_t;
 
-#define CREATE_BUTTON_LOCATIONS(...) CreateButtonLocations({__VA_ARGS__})
+#define CREATE_BUTTON_LOCATIONS(...) create_button_locations({__VA_ARGS__})
 
 namespace std {
 template <>
-struct hash<CacheKey> {
-  size_t operator()(const CacheKey& key) const {
+struct hash<cache_key_t> {
+  size_t operator()(const cache_key_t& key) const {
     auto hash1 =
         hash<int>()(get<0>(key).first) ^ hash<int>()(get<0>(key).second);
     auto hash2 =
         hash<int>()(get<1>(key).first) ^ hash<int>()(get<1>(key).second);
     auto hash3 = hash<int>()(get<2>(key));
     auto hash4 = hash<int>()(get<3>(key));
+
     return hash1 ^ hash2 ^ hash3 ^ hash4;
   }
 };
 }  // namespace std
 
-std::unordered_map<char, Position> CreateButtonLocations(const std::vector<std::string>& layout) {
-  std::unordered_map<char, Position> buttonLocations;
+std::unordered_map<char, position_t> create_button_locations(const std::vector<std::string>& layout) {
+  std::unordered_map<char, position_t> button_locations;
   for (size_t y = 0; y < layout.size(); ++y) {
     for (size_t x = 0; x < layout[y].size(); ++x) {
-      buttonLocations[layout[y][x]] = {x, y};
+      button_locations[layout[y][x]] = {x, y};
     }
   }
-  return buttonLocations;
+  return button_locations;
 }
 
-std::unordered_map<char, Position> buttonLocations = CREATE_BUTTON_LOCATIONS("789", "456", "123", "_0A");
-std::unordered_map<char, Position> buttonLocations2 = CREATE_BUTTON_LOCATIONS("_^A", "<v>");
+std::unordered_map<char, position_t> button_locations = CREATE_BUTTON_LOCATIONS("789", "456", "123", "_0A");
+std::unordered_map<char, position_t> button_locations_2 = CREATE_BUTTON_LOCATIONS("_^A", "<v>");
 
-std::unordered_map<CacheKey, mpz_class> walkRouteCache;
+std::unordered_map<cache_key_t, mpz_class> walk_route_cache;
 
-mpz_class WalkRoute(Position fromPos, Position toPos, int depth, int badRow,
-                    const std::function<mpz_class(std::string, int, bool)>& routeCode) {
-  CacheKey cacheKey = std::make_tuple(fromPos, toPos, depth, badRow);
-  if (walkRouteCache.count(cacheKey)) {
-    return walkRouteCache[cacheKey];
+mpz_class walk_route(position_t from_pos, position_t to_pos, int depth, int bad_row,
+                     const std::function<mpz_class(std::string, int, bool)>& route_code) {
+                      
+  cache_key_t cache_key = std::make_tuple(from_pos, to_pos, depth, bad_row);
+
+  if (walk_route_cache.count(cache_key)) {
+    return walk_route_cache[cache_key];
   }
 
   std::string horiz =
-      (fromPos.first < toPos.first)   ? std::string(toPos.first - fromPos.first, '>')
-      : (fromPos.first > toPos.first) ? std::string(fromPos.first - toPos.first, '<')
-                                      : "";
-
-  std::string vert =
-      (fromPos.second < toPos.second) ? std::string(toPos.second - fromPos.second, 'v')
-      : (fromPos.second > toPos.second) ? std::string(fromPos.second - toPos.second, '^')
+      (from_pos.first < to_pos.first)   ? std::string(to_pos.first - from_pos.first, '>')
+      : (from_pos.first > to_pos.first) ? std::string(from_pos.first - to_pos.first, '<')
                                         : "";
 
+  std::string vert =
+      (from_pos.second < to_pos.second) ? std::string(to_pos.second - from_pos.second, 'v')
+      : (from_pos.second > to_pos.second) ? std::string(from_pos.second - to_pos.second, '^')
+                                          : "";
+
   std::vector<std::string> opts;
+
   if (horiz.empty()) {
     opts = {vert};
   } else if (vert.empty()) {
     opts = {horiz};
   } else {
     opts = {horiz + vert, vert + horiz};
-    if (fromPos.first == 0 && toPos.second == badRow) {
+    if (from_pos.first == 0 && to_pos.second == bad_row) {
       opts = {horiz + vert};
-    } else if (toPos.first == 0 && fromPos.second == badRow) {
+    } else if (to_pos.first == 0 && from_pos.second == bad_row) {
       opts = {vert + horiz};
     }
   }
@@ -79,42 +83,44 @@ mpz_class WalkRoute(Position fromPos, Position toPos, int depth, int badRow,
   mpz_pow_ui(result.get_mpz_t(), mpz_class(10).get_mpz_t(), 30);
 
   for (const auto& opt : opts) {
-    result = std::min(result, routeCode(opt + "A", depth - 1, true));
+    result = std::min(result, route_code(opt + "A", depth - 1, true));
   }
 
-  walkRouteCache[cacheKey] = result;
+  walk_route_cache[cache_key] = result;
+
   return result;
 }
 
-mpz_class RouteCode(std::string code, int depth, bool arrows) {
+mpz_class route_code(std::string code, int depth, bool arrows) {
   if (depth <= 0) {
     return mpz_class(code.length());
   }
 
-  const auto& locations = arrows ? buttonLocations2 : buttonLocations;
-  int badRow = arrows ? 0 : 3;
-  Position pos = locations.at('A');
+  const auto& locations = arrows ? button_locations_2 : button_locations;
+  int bad_row = arrows ? 0 : 3;
+  position_t pos = locations.at('A');
   mpz_class res = 0;
 
   for (char c : code) {
-    Position newPos = locations.at(c);
-    res += WalkRoute(pos, newPos, depth, badRow, RouteCode);
-    pos = newPos;
+    position_t new_pos = locations.at(c);
+    res += walk_route(pos, new_pos, depth, bad_row, route_code);
+    pos = new_pos;
   }
+  
   return res;
 }
 
-mpz_class Solve(int depth) {
+mpz_class solve(int depth) {
   std::vector<std::string> dat = {"459A", "671A", "846A", "285A", "083A"};
   mpz_class total = 0;
 
   for (const auto& i : dat) {
-    std::string numericPart = i.substr(0, i.size() - 1);
-    numericPart.erase(0, numericPart.find_first_not_of('0'));
-    if (numericPart.empty()) numericPart = "0";
+    std::string numeric_part = i.substr(0, i.size() - 1);
+    numeric_part.erase(0, numeric_part.find_first_not_of('0'));
+    if (numeric_part.empty()) numeric_part = "0";
 
-    mpz_class multiplier = mpz_class(numericPart);
-    mpz_class result = RouteCode(i, depth, false);
+    mpz_class multiplier = mpz_class(numeric_part);
+    mpz_class result = route_code(i, depth, false);
     total += multiplier * result;
   }
 
@@ -122,8 +128,8 @@ mpz_class Solve(int depth) {
 }
 
 int main() {
-  std::cout << Solve(3) << std::endl;
-  std::cout << Solve(26) << std::endl;
+  std::cout << solve(3) << std::endl;
+  std::cout << solve(26) << std::endl;
 
   return 0;
 }
