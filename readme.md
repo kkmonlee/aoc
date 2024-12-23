@@ -10,6 +10,7 @@ language choice is based on the problem and vibes
         </tr>
     </thead>
     <tbody>
+      <tr><td style='width:15%;'>23</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/23.hs'>Haskell</a></td></tr>
       <tr><td style='width:15%;'>22</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/22.jl'>Julia</a></td></tr>
       <tr><td style='width:15%;'>21</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/21.cpp'>C++</a></td></tr>
       <tr><td style='width:15%;'>20</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/20.f90'>Fortran</a></td></tr>
