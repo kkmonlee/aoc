@@ -47,7 +47,7 @@ countTrianglesWithT = length . filter (\(a,b,c) ->
     any (\x -> take 1 x == "t") [a,b,c]
   )
 
--- node in p UNION x having intersections with p
+-- node in {p UNION x} having intersections with p
 findPivot :: Map String (Set String) -> Set String -> Set String -> String
 findPivot adj p x =
     let px   = S.union p x
@@ -71,7 +71,7 @@ bronKerboschMax adj r p x bestSoFar
     | otherwise =
         -- pivot selection heuristic
         let pivot     = findPivot adj p x
-            -- vertices in P \ neighbours(pivot)
+            -- vertices in {P \ neighbours(pivot)}
             toExplore = p S.\\ (adj M.! pivot)
         in  S.foldl'
               (\currentBest v ->
