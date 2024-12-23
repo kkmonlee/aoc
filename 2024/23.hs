@@ -41,7 +41,7 @@ findTriangles adj =
           ]
     in  triples
 
--- | triangle nodes starting with t
+-- triangle nodes starting with t
 countTrianglesWithT :: [(String, String, String)] -> Int
 countTrianglesWithT = length . filter (\(a,b,c) ->
     any (\x -> take 1 x == "t") [a,b,c]
