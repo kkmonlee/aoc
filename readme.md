@@ -10,7 +10,8 @@ language choice is based on the problem and vibes
         </tr>
     </thead>
     <tbody>
-      <tr><td style='width:15%;'>25</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.rs'>Rust</a></td></tr>
+      <tr><td style='width:15%;'>25</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.s'>x86-64 Assembly</a></td></tr>
+      <!-- <tr><td style='width:15%;'>25</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.rs'>Rust</a></td></tr> -->
       <tr><td style='width:15%;'>24</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/24.go'>Go</a></td></tr>
       <tr><td style='width:15%;'>23</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/23.hs'>Haskell</a></td></tr>
       <tr><td style='width:15%;'>22</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2024/22.jl'>Julia</a></td></tr>

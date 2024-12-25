@@ -6,6 +6,7 @@ LANGUAGES = {
     ".adb": "Ada",
     ".ads": "Ada",
     ".apl": "APL",
+    ".s": "x86-64 Assembly",
     ".cc": "C++",
     ".clj": "Clojure",
     ".cpp": "C++",
