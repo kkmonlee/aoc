@@ -35,7 +35,7 @@ _start:
     pop %rdi
     syscall
     
-    # Initialize counters
+    # counters
     xor %r12, %r12 # key
     xor %r13, %r13 # lock
     xor %r14, %r14 # matches
