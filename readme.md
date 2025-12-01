@@ -1,5 +1,19 @@
 language choice is based on the problem and vibes
 
+## 2025
+
+<table style='width:100%; border-collapse: collapse; text-align: left;'>
+    <thead>
+        <tr>
+            <th style='width:15%; text-align: left;'>Day</th>
+            <th style='width:85%; text-align: left;'>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr><td style='width:15%;'>01</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2025/01.rkt'>Racket</a></td></tr>
+    </tbody>
+</table>
+
 ## 2024
 
 <table style='width:100%; border-collapse: collapse; text-align: left;'>
