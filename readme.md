@@ -10,6 +10,7 @@ language choice is based on the problem and vibes
         </tr>
     </thead>
     <tbody>
+      <tr><td style='width:15%;'>02</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2025/02.wl'>Mathematica</a></td></tr>
       <tr><td style='width:15%;'>01</td><td style='width:85%;'><a href='https://github.com/kkmonlee/aoc/blob/main/2025/01.rkt'>Racket</a></td></tr>
     </tbody>
 </table>

@@ -20,6 +20,7 @@ LANGUAGES = {
     ".lisp": "Common Lisp",
     ".lua": "Lua",
     ".ml": "OCaml",
+    ".wl": "Mathematica",
     ".nim": "Nim",
     ".rb": "Ruby",
     ".rkt": "Racket",
