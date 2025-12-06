@@ -24,6 +24,7 @@ LANGUAGES = {
     ".nim": "Nim",
     ".rb": "Ruby",
     ".rkt": "Racket",
+    ".rb": "Ruby",
     ".rs": "Rust",
     ".scala": "Scala",
     ".zig": "Zig",
