@@ -42,7 +42,7 @@ techniques are how i approached the problem but you can brute force nearly all o
     </thead>
     <tbody>
       <tr><td>25</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.s'>x86-64 Assembly</a></td><td>Trivial</td><td>parsing, pattern counting</td></tr>
-      <tr><td>25</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.rs'>Rust</a></td><td>Trivial</td><td>parsing, pattern counting</td></tr>
+      <!-- <tr><td>25</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/25.rs'>Rust</a></td><td>Trivial</td><td>parsing, pattern counting</td></tr> -->
       <tr><td>24</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/24.go'>Go</a></td><td>Medium</td><td>circuit analysis, ripple-carry adder, wire tracing</td></tr>
       <tr><td>23</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/23.hs'>Haskell</a></td><td>Easy</td><td>graph triangles, Bron-Kerbosch, max clique</td></tr>
       <tr><td>22</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/22.jl'>Julia</a></td><td>Trivial</td><td>PRNG, sequence enumeration, hash aggregation</td></tr>
