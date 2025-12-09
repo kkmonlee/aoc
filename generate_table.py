@@ -39,14 +39,15 @@ PROBLEMS = {
     ("2025", 5): ("Trivial", "interval merging"),
     ("2025", 6): ("Trivial", "parsing, 2D array traversal"),
     ("2025", 7): ("Trivial", "state propagation, path counting"),
-    ("2025", 8): ("Trivial", "union-find, Kruskal"),
+    ("2025", 8): ("Easy", "union-find, Kruskal"),
+    ("2025", 9): ("Easy", "scanline range compression, pruned enumeration"),    
     # 2024
     ("2024", 1): ("Trivial", "sorting, frequency map"),
     ("2024", 2): ("Trivial", "monotonicity check"),
     ("2024", 3): ("Trivial", "parsing, state machine"),
     ("2024", 4): ("Trivial", "grid search, direction vectors"),
     ("2024", 5): ("Trivial", "topological sort, dependency graph"),
-    ("2024", 6): ("Trivial", "cycle detection, grid traversal"),
+    ("2024", 6): ("Easy", "cycle detection, grid traversal"),
     ("2024", 7): ("Trivial", "brute force, operator enumeration"),
     ("2024", 8): ("Trivial", "coordinate geometry, gcd normalisation"),
     ("2024", 9): ("Easy", "two-pointer, segment fitting"),
@@ -58,7 +59,7 @@ PROBLEMS = {
     ("2024", 15): ("Easy", "BFS, transitive closure"),
     ("2024", 16): ("Easy", "Dijkstra, state-space search, path reconstruction"),
     ("2024", 17): ("Medium", "reverse engineering, constraint propagation, bit manipulation"),
-    ("2024", 18): ("Trivial", "BFS, binary search, bidirectional search"),
+    ("2024", 18): ("Easy", "BFS, binary search, bidirectional search"),
     ("2024", 19): ("Trivial", "memoisation, string prefix matching, DP"),
     ("2024", 20): ("Trivial", "BFS, precomputed distances"),
     ("2024", 21): ("Easy", "recursive DP, memoisation"),
@@ -71,6 +72,13 @@ PROBLEMS = {
 def language_from_extension(ext):
     return LANGUAGES.get(ext, "Unknown")
 
+def extract_day_from_filename(filename: str) -> int:
+    stem = filename.split(".", 1)[0] 
+    digits = "".join(ch for ch in stem if ch.isdigit())
+    if not digits:
+        raise ValueError(f"Could not extract day number from filename '{filename}'")
+    return int(digits)
+
 def generate_html_table():
     tables = {}
     valid_extensions = tuple(LANGUAGES.keys())
@@ -81,7 +89,11 @@ def generate_html_table():
             year_table = []
             for file in sorted(os.listdir(year_path), reverse=True):
                 if file.endswith(valid_extensions):
-                    day = int(file.split(".")[0])
+                    try:
+                        day = extract_day_from_filename(file)
+                    except ValueError:
+                        continue
+
                     ext = os.path.splitext(file)[1]
                     language = language_from_extension(ext)
                     link = f"<a href='{base_github_url}{year}/{file}'>{language}</a>"

@@ -16,7 +16,8 @@ techniques are how i approached the problem but you can brute force nearly all o
         </tr>
     </thead>
     <tbody>
-      <tr><td>08</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/08.ml'>OCaml</a></td><td>Trivial</td><td>union-find, Kruskal</td></tr>
+      <tr><td>09</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/p9.nim'>Nim</a></td><td>Easy</td><td>scanline range compression, pruned enumeration</td></tr>
+      <tr><td>08</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/08.ml'>OCaml</a></td><td>Easy</td><td>union-find, Kruskal</td></tr>
       <tr><td>07</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/07.clj'>Clojure</a></td><td>Trivial</td><td>state propagation, path counting</td></tr>
       <tr><td>06</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/06.rb'>Ruby</a></td><td>Trivial</td><td>parsing, 2D array traversal</td></tr>
       <tr><td>05</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/05.clj'>Clojure</a></td><td>Trivial</td><td>interval merging</td></tr>
@@ -49,7 +50,7 @@ techniques are how i approached the problem but you can brute force nearly all o
       <tr><td>21</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/21.cpp'>C++</a></td><td>Easy</td><td>recursive DP, memoisation</td></tr>
       <tr><td>20</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/20.f90'>Fortran</a></td><td>Trivial</td><td>BFS, precomputed distances</td></tr>
       <tr><td>19</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/19.ml'>OCaml</a></td><td>Trivial</td><td>memoisation, string prefix matching, DP</td></tr>
-      <tr><td>18</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/18.rs'>Rust</a></td><td>Trivial</td><td>BFS, binary search, bidirectional search</td></tr>
+      <tr><td>18</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/18.rs'>Rust</a></td><td>Easy</td><td>BFS, binary search, bidirectional search</td></tr>
       <tr><td>17</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/17.cpp'>C++</a></td><td>Medium</td><td>reverse engineering, constraint propagation, bit manipulation</td></tr>
       <tr><td>16</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/16.ml'>OCaml</a></td><td>Easy</td><td>Dijkstra, state-space search, path reconstruction</td></tr>
       <tr><td>15</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/15.hs'>Haskell</a></td><td>Easy</td><td>BFS, transitive closure</td></tr>
@@ -61,7 +62,7 @@ techniques are how i approached the problem but you can brute force nearly all o
       <tr><td>09</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/09.clj'>Clojure</a></td><td>Easy</td><td>two-pointer, segment fitting</td></tr>
       <tr><td>08</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/08.rs'>Rust</a></td><td>Trivial</td><td>coordinate geometry, gcd normalisation</td></tr>
       <tr><td>07</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/07.hs'>Haskell</a></td><td>Trivial</td><td>brute force, operator enumeration</td></tr>
-      <tr><td>06</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/06.hs'>Haskell</a></td><td>Trivial</td><td>cycle detection, grid traversal</td></tr>
+      <tr><td>06</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/06.hs'>Haskell</a></td><td>Easy</td><td>cycle detection, grid traversal</td></tr>
       <tr><td>05</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/05.hs'>Haskell</a></td><td>Trivial</td><td>topological sort, dependency graph</td></tr>
       <tr><td>04</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/04.hs'>Haskell</a></td><td>Trivial</td><td>grid search, direction vectors</td></tr>
       <tr><td>03</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2024/03.hs'>Haskell</a></td><td>Trivial</td><td>parsing, state machine</td></tr>
