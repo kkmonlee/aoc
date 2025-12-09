@@ -1,8 +1,8 @@
 language choice is based on the problem and vibes
 
-difficulty is *opinionated* and calibrated based on my experience in competitive programming
+difficulty is *opinionated* and calibrated based on experience
 
-techniques are how i approached the problem but you can brute force nearly all of them
+techniques are how i approached the problem but you can brute-force nearly all of them
 
 ## 2025
 
