@@ -39,7 +39,7 @@ PROBLEMS = {
     ("2025", 5): ("Trivial", "interval merging"),
     ("2025", 6): ("Trivial", "parsing, 2D array traversal"),
     ("2025", 7): ("Trivial", "state propagation, path counting"),
-    ("2025", 8): ("Easy", "union-find, Kruskal"),
+    ("2025", 8): ("Easy", "union-find, Kruskal's algorithm"),
     ("2025", 9): ("Easy", "scanline range compression, pruned enumeration"),
     ("2025", 10): ("Easy", "Galois field (mod-2 arithmetic with XOR), integer linear programming"),
     # 2024
