@@ -40,7 +40,8 @@ PROBLEMS = {
     ("2025", 6): ("Trivial", "parsing, 2D array traversal"),
     ("2025", 7): ("Trivial", "state propagation, path counting"),
     ("2025", 8): ("Easy", "union-find, Kruskal"),
-    ("2025", 9): ("Easy", "scanline range compression, pruned enumeration"),    
+    ("2025", 9): ("Easy", "scanline range compression, pruned enumeration"),
+    ("2025", 10): ("Easy", "Galois field (mod-2 arithmetic with XOR), integer linear programming"),
     # 2024
     ("2024", 1): ("Trivial", "sorting, frequency map"),
     ("2024", 2): ("Trivial", "monotonicity check"),
@@ -87,25 +88,34 @@ def generate_html_table():
         year_path = os.path.join(repo_dir, year)
         if os.path.isdir(year_path) and year.isdigit():
             year_table = []
-            for file in sorted(os.listdir(year_path), reverse=True):
-                if file.endswith(valid_extensions):
-                    try:
-                        day = extract_day_from_filename(file)
-                    except ValueError:
-                        continue
 
-                    ext = os.path.splitext(file)[1]
-                    language = language_from_extension(ext)
-                    link = f"<a href='{base_github_url}{year}/{file}'>{language}</a>"
-                    
-                    difficulty, techniques = PROBLEMS.get((year, day), ("", ""))
-                    
-                    year_table.append(
-                        f"<tr><td>{day:02d}</td><td>{link}</td>"
-                        f"<td>{difficulty}</td><td>{techniques}</td></tr>"
-                    )
+            year_files = [
+                file for file in os.listdir(year_path)
+                if file.endswith(valid_extensions)
+            ]
+
+            year_files.sort(key=extract_day_from_filename, reverse=True)
+
+            for file in year_files:
+                try:
+                    day = extract_day_from_filename(file)
+                except ValueError:
+                    continue
+
+                ext = os.path.splitext(file)[1]
+                language = language_from_extension(ext)
+                link = f"<a href='{base_github_url}{year}/{file}'>{language}</a>"
+
+                difficulty, techniques = PROBLEMS.get((year, day), ("", ""))
+
+                year_table.append(
+                    f"<tr><td>{day:02d}</td><td>{link}</td>"
+                    f"<td>{difficulty}</td><td>{techniques}</td></tr>"
+                )
+
             tables[year] = year_table
     return tables
+
 
 def save_html_to_markdown(tables, output_file):
     with open(output_file, "w") as f:
