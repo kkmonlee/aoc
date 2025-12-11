@@ -16,6 +16,7 @@ techniques are how i approached the problem but you can brute-force nearly all o
         </tr>
     </thead>
     <tbody>
+      <tr><td>11</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/11.clj'>Clojure</a></td><td>Trivial</td><td>DFS, memoization, DAG path counting</td></tr>
       <tr><td>10</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/10.jl'>Julia</a></td><td>Easy</td><td>Galois field (mod-2 arithmetic with XOR), integer linear programming</td></tr>
       <tr><td>09</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/p9.nim'>Nim</a></td><td>Easy</td><td>scanline range compression, pruned enumeration</td></tr>
       <tr><td>08</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/08.ml'>OCaml</a></td><td>Easy</td><td>union-find, Kruskal's algorithm</td></tr>
