@@ -1,9 +1,5 @@
 language choice is based on the problem and vibes
 
-difficulty is *opinionated* and calibrated based on experience
-
-techniques are how i approached the problem but you can brute-force nearly all of them
-
 ## 2025
 
 <table style='width:100%; border-collapse: collapse; text-align: left;'>
@@ -16,6 +12,7 @@ techniques are how i approached the problem but you can brute-force nearly all o
         </tr>
     </thead>
     <tbody>
+      <tr><td>12</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/12.hs'>Haskell</a></td><td>Trivial</td><td>area comparison, pattern recognition (degenerate polyomino packing)</td></tr>
       <tr><td>11</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/11.clj'>Clojure</a></td><td>Trivial</td><td>DFS, memoization, DAG path counting</td></tr>
       <tr><td>10</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/10.jl'>Julia</a></td><td>Easy</td><td>Galois field (mod-2 arithmetic with XOR), integer linear programming</td></tr>
       <tr><td>09</td><td><a href='https://github.com/kkmonlee/aoc/blob/main/2025/p9.nim'>Nim</a></td><td>Easy</td><td>scanline range compression, pruned enumeration</td></tr>

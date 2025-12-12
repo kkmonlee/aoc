@@ -43,6 +43,7 @@ PROBLEMS = {
     ("2025", 9): ("Easy", "scanline range compression, pruned enumeration"),
     ("2025", 10): ("Easy", "Galois field (mod-2 arithmetic with XOR), integer linear programming"),
     ("2025", 11): ("Trivial", "DFS, memoization, DAG path counting"),
+    ("2025", 12): ("Trivial", "area comparison, pattern recognition (degenerate polyomino packing)"),
     # 2024
     ("2024", 1): ("Trivial", "sorting, frequency map"),
     ("2024", 2): ("Trivial", "monotonicity check"),
